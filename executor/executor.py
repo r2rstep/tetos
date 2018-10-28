@@ -5,7 +5,7 @@ from exporter.playlist_converter_exporter import PlaylistConverterExporter
 
 class Executor(object):
     def __init__(self, args):
-        self._input = args.input_path
+        self._input = args.input_path.pop()
         self._importer = get_importer(self._input)
         self._interpreter = get_druh_slawek_interpreter()
         self._exporter = PlaylistConverterExporter()

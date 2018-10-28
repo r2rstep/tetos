@@ -16,5 +16,8 @@ def get_druh_slawek_interpreter() -> Interpreter:
                             r'({artist}) / ({title}) ({extra_title}) ({edition})'.format(artist=artist,
                                                                                          title=title,
                                                                                          extra_title=extra_title,
-                                                                                         edition=edition)]
+                                                                                         edition=edition),
+                            r'({artist}) / ({title}) ({edition})'.format(artist=artist,
+                                                                         title=title,
+                                                                         edition=edition)]
     return Interpreter(druh_slawek_patterns)

@@ -6,12 +6,12 @@ from unittest.case import TestCase
 from mock import Mock, patch
 
 
-@patch('executor.executor.get_importer')
-@patch('executor.executor.get_druh_slawek_interpreter')
+@patch('executor.executor.get_importer', autospec=True)
+@patch('executor.executor.get_druh_slawek_interpreter', autospec=True)
 @patch('executor.executor.PlaylistConverterExporter', autospec=True)
 class TestExecutor(TestCase):
     def test_executor(self, exporter, get_interpreter, get_importer):
-        file_path = '/path/to/file'
+        file_path = ['/path/to/file']
         args = Mock(input_path=file_path)
 
         importer = Mock(spec_set=InputImporter)
