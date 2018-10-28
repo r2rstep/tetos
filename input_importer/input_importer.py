@@ -6,5 +6,5 @@ class InputImporter(abc.ABC):
         self._interpreter = interpreter
 
     @abc.abstractmethod
-    def get_str(self):
+    def get_entries(self):
         pass
