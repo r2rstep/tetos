@@ -24,5 +24,9 @@ class TestPlaylistConverter(TestCase):
                                            '%0AKanye West - Addiction')
 
     def test_export_entry_contains_http_special_character(self, webbrowser):
-        self.fail('e. g. slash')
+        entries = [{'artist': '@&rtist',
+                    'title': '^title'}]
+        exporter = PlaylistConverterExporter()
+        exporter.export(entries)
+        webbrowser.open.assert_called_with('http://www.playlist-converter.net/#/freetext=%40%26rtist - %5Etitle')
 

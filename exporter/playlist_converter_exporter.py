@@ -1,4 +1,5 @@
 from exporter.exporter import Exporter
+from utils.http import escape_http_special_characters
 
 
 import webbrowser
@@ -12,6 +13,10 @@ class PlaylistConverterExporter(Exporter):
     def export(self, entries: dict):
         url = self._base_url
         for entry in entries:
-            url += entry['artist'] + ' - ' + entry['title'] + self._encoded_newline
+            artist = escape_http_special_characters(entry['artist'])
+            title = escape_http_special_characters(entry['title'])
+            url += artist + ' - ' + title + self._encoded_newline
         url = url.rstrip(self._encoded_newline)
+        import pdb
+        pdb.set_trace()
         webbrowser.open(url)
