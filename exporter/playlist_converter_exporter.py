@@ -17,6 +17,4 @@ class PlaylistConverterExporter(Exporter):
             title = escape_http_special_characters(entry['title'])
             url += artist + ' - ' + title + self._encoded_newline
         url = url.rstrip(self._encoded_newline)
-        import pdb
-        pdb.set_trace()
         webbrowser.open(url)
