@@ -1,4 +1,4 @@
-def escape_http_special_characters(s: str):
+def encode_http_special_characters(s: str):
     special_chars = {'<': '%3C', '>': '%3E', '#': '%23', '%': '%25',
                      '{': '%7B', '}': '%7D', '|': '%7C', '\\': '%5C',
                      '^': '%5E', '~': '%7E', '[': '%5B', ']': '%5D',
