@@ -17,7 +17,7 @@ class Interpreter(object):
             entry = match.groupdict()
             if 'extra_title' in entry:
                 entry['extra_title'] = self._get_raw_title(entry['extra_title'])
-            if 'edition':
+            if 'edition' in entry:
                 entry['edition'] = self._get_raw_edition(entry['edition'])
 
         return entry

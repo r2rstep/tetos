@@ -7,4 +7,4 @@ class TxtImporter(InputImporter):
 
     def get_entries(self):
         with open(self._file_path) as f:
-            return f.readlines()
+            return list(filter(None, (line.rstrip() for line in f)))
