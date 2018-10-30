@@ -18,6 +18,8 @@ class Executor(object):
     def _interpret(self, input_entries):
         entries = []
         for entry in input_entries:
-            entries.append(self._interpreter.interpret(entry))
+            interpreted_entry = self._interpreter.interpret(entry)
+            if interpreted_entry:
+                entries.append(interpreted_entry)
 
         return entries

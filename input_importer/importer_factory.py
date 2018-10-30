@@ -1,6 +1,10 @@
 from input_importer.input_importer import InputImporter
-from input_importer.txt_importer import TxtImporter
+from input_importer.importers import TxtImporter, HtmlImporter
 
 
 def get_importer(input_path) -> InputImporter:
-    return TxtImporter(input_path)
+    if 'txt' == input_path.split('.')[-1]:
+        importer = TxtImporter(input_path)
+    else:
+        importer = HtmlImporter(input_path)
+    return importer
