@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='tetos',
-    version='0.2dev',
+    version='1.0',
     author='Artur Stepniak',
     author_email='aart.st@gmail.com',
     packages=find_packages(),

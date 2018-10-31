@@ -1,5 +1,5 @@
 from exporter.exporter import Exporter
-from utils.http import encode_http_special_characters
+from utils.http_utils import encode_http_special_characters
 
 
 import webbrowser
