@@ -10,7 +10,11 @@ def fetch_html(src: str):
             frames = bs.find_all('frame')
         return frames
 
-    resp = url_request.urlopen(src)
+    try:
+        resp = url_request.urlopen(src)
+    except ValueError:
+        raise ValueError('URL should begin with "http://" or "https://"')
+
     bs = BeautifulSoup(resp, 'html.parser')
 
     parsed_src = url_parse.urlparse(src)

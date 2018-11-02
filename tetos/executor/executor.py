@@ -1,6 +1,6 @@
-from tetos.input_importer.importer_factory import get_importer
-from tetos.interpreter.interpreter_factory import get_druh_slawek_interpreter
-from tetos.exporter.playlist_converter_exporter import PlaylistConverterExporter
+from tetos.input.importer_factory import get_importer
+from tetos.processing.interpreter_factory import get_druh_slawek_interpreter
+from tetos.output.playlist_converter_exporter import PlaylistConverterExporter
 
 
 class Executor(object):

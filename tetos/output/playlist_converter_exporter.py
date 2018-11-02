@@ -1,4 +1,4 @@
-from tetos.exporter.exporter import Exporter
+from tetos.output.exporter import Exporter
 from utils.http_utils import encode_http_special_characters
 
 

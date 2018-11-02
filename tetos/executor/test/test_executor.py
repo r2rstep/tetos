@@ -1,6 +1,6 @@
 from tetos.executor.executor import Executor
-from tetos.input_importer.input_importer import InputImporter
-from tetos.interpreter.interpreter import Interpreter
+from tetos.input.input_importer import InputImporter
+from tetos.processing.interpreter import Interpreter
 
 from unittest.case import TestCase
 from mock import Mock, patch

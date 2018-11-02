@@ -1,5 +1,5 @@
-from tetos.input_importer.input_importer import InputImporter
-from tetos.input_importer.importers import TxtImporter, HtmlImporter
+from tetos.input.input_importer import InputImporter
+from tetos.input.importers import TxtImporter, HtmlImporter
 
 
 def get_importer(input_path) -> InputImporter:
