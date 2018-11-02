@@ -5,6 +5,8 @@ import argparse
 
 if __name__ == '__main__':
     args_parser = argparse.ArgumentParser()
-    args_parser.add_argument('input_path', nargs=1)
+    args_parser.add_argument('input_path', nargs=1, help='URL or path to website with a playlist. If it is '
+                                                         'an Internet website (not saved locally), the '
+                                                         'address should begin with "http://" or "https://"')
     args = args_parser.parse_args()
     Executor(args).execute()
