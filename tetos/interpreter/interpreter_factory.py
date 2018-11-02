@@ -1,4 +1,4 @@
-from interpreter.interpreter import Interpreter
+from tetos.interpreter.interpreter import Interpreter
 
 
 def get_druh_slawek_interpreter() -> Interpreter:

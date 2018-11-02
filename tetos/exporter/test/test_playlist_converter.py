@@ -1,10 +1,10 @@
-from exporter.playlist_converter_exporter import PlaylistConverterExporter
+from tetos.exporter.playlist_converter_exporter import PlaylistConverterExporter
 
 from unittest.case import TestCase
 from mock import patch
 
 
-@patch('exporter.playlist_converter_exporter.webbrowser')
+@patch('tetos.exporter.playlist_converter_exporter.webbrowser')
 class TestPlaylistConverter(TestCase):
     def test_single_entry(self, webbrowser):
         entries = [{'artist': 'artist',

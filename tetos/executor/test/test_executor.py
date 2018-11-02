@@ -1,14 +1,14 @@
-from executor.executor import Executor
-from input_importer.input_importer import InputImporter
-from interpreter.interpreter import Interpreter
+from tetos.executor.executor import Executor
+from tetos.input_importer.input_importer import InputImporter
+from tetos.interpreter.interpreter import Interpreter
 
 from unittest.case import TestCase
 from mock import Mock, patch
 
 
-@patch('executor.executor.get_importer', autospec=True)
-@patch('executor.executor.get_druh_slawek_interpreter', autospec=True)
-@patch('executor.executor.PlaylistConverterExporter', autospec=True)
+@patch('tetos.executor.executor.get_importer', autospec=True)
+@patch('tetos.executor.executor.get_druh_slawek_interpreter', autospec=True)
+@patch('tetos.executor.executor.PlaylistConverterExporter', autospec=True)
 class TestExecutor(TestCase):
     def test_executor(self, exporter, get_interpreter, get_importer):
         file_path = ['/path/to/file']

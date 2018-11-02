@@ -1,4 +1,4 @@
-from interpreter.interpreter_factory import get_druh_slawek_interpreter
+from tetos.interpreter.interpreter_factory import get_druh_slawek_interpreter
 
 from unittest.case import TestCase
 

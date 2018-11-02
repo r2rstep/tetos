@@ -1,4 +1,4 @@
-from input_importer.input_importer import InputImporter
+from tetos.input_importer.input_importer import InputImporter
 from utils.html_fetcher import fetch_html
 
 import html2text
