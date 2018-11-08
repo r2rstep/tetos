@@ -29,5 +29,5 @@ def fetch_html(src: str):
 
 
 def fetch_plain_file(src: str):
-    resp = url_request.urlopen('file://' + os.path.abspath(src))
+    resp = url_request.urlopen(src)
     return resp.read().decode('iso-8859-2').splitlines()
