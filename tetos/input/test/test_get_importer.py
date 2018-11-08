@@ -18,7 +18,15 @@ class TestGetImporter(TestCase):
         importer.assert_called_with(path)
 
     @patch('tetos.input.importer_factory.HtmlImporter', autospec=True)
-    def test_html_importer(self, importer):
-        path = '/path/to/file'
+    @patch('tetos.input.importer_factory.fetch_html')
+    def test_html_importer_remote_file(self, fetch, importer):
+        path = 'http://path/to/file'
         self.assertEqual(importer.return_value, get_importer(path))
-        importer.assert_called_with(path)
+        importer.assert_called_with(path, fetch)
+
+    @patch('tetos.input.importer_factory.HtmlImporter', autospec=True)
+    @patch('tetos.input.importer_factory.fetch_html')
+    def test_html_importer_remote_file(self, fetch, importer):
+        path = 'http://path/to/file'
+        self.assertEqual(importer.return_value, get_importer(path))
+        importer.assert_called_with(path, fetch)

@@ -1,15 +1,15 @@
 from tetos.input.input_importer import InputImporter
-from utils.html_fetcher import fetch_html
 
 import html2text
 
 
 class HtmlImporter(InputImporter):
-    def __init__(self, file):
+    def __init__(self, file, fetcher):
         self._file_path = file
+        self._fetch_html = fetcher
 
     def get_entries(self):
-        htmls = fetch_html(self._file_path)
+        htmls = self._fetch_html(self._file_path)
         text_maker = html2text.HTML2Text()
         # otherwise some text may end up in a new line
         text_maker.body_width = 0
