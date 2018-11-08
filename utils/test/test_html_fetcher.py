@@ -8,7 +8,7 @@ from mock import patch, Mock, call
 class TestFetchHtml(TestCase):
     def test_fetch_html(self, url_request):
         responses = [Mock(), Mock(), Mock(), Mock()]
-        url_request.OpenerDirector.return_value.open.side_effect = responses
+        url_request.urlopen.side_effect = responses
         responses[0].read.return_value = '<html>' \
                                          'frame_0' \
                                          '<iframe src="frame_1.0_src"></iframe>' \
@@ -29,7 +29,7 @@ class TestFetchHtml(TestCase):
         html = fetch_html('http://www.example.com/dir0/src.html')
         self.assertListEqual(expected, html)
 
-        url_request.OpenerDirector.return_value.open.assert_has_calls([call('http://www.example.com/dir0/src.html'),
-                                                                       call('http://www.example.com/dir0/frame_1.0_src'),
-                                                                       call('http://www.example.com/frame_2.0_src'),
-                                                                       call('www.example.com/dir1/frame_1.1_src')])
+        url_request.urlopen.assert_has_calls([call('http://www.example.com/dir0/src.html'),
+                                              call('http://www.example.com/dir0/frame_1.0_src'),
+                                              call('http://www.example.com/frame_2.0_src'),
+                                              call('www.example.com/dir1/frame_1.1_src')])

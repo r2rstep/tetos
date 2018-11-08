@@ -11,12 +11,7 @@ def fetch_html(src: str):
         return frames
 
     try:
-        http_handler = url_request.HTTPHandler()
-        proxy_handler = url_request.ProxyHandler()
-        opener = url_request.OpenerDirector()
-        opener.add_handler(proxy_handler)
-        opener.add_handler(http_handler)
-        resp = opener.open(src)
+        resp = url_request.urlopen(src)
     except ValueError:
         raise ValueError('URL should begin with "http://" or "https://"')
 
