@@ -1,5 +1,5 @@
 from tetos.output.exporter import Exporter
-from utils.http_utils import encode_http_special_characters
+from tetos.utils.http_utils import encode_http_special_characters
 
 
 import webbrowser

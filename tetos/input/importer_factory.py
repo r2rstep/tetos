@@ -1,6 +1,6 @@
 from tetos.input.input_importer import InputImporter
 from tetos.input.importers import TxtImporter, HtmlImporter
-from utils.fetchers import fetch_html
+from tetos.utils.fetchers import fetch_html
 
 
 def get_importer(input_path) -> InputImporter:

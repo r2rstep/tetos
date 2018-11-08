@@ -1,10 +1,10 @@
-from utils.fetchers import fetch_html
+from tetos.utils.fetchers import fetch_html
 
 from unittest import TestCase
 from mock import patch, Mock, call
 
 
-@patch('utils.fetchers.url_request')
+@patch('tetos.utils.fetchers.url_request')
 class TestFetchHtml(TestCase):
     def test_fetch_html(self, url_request):
         responses = [Mock(), Mock(), Mock(), Mock()]
