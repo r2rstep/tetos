@@ -7,4 +7,4 @@ or
 pip install .
 
 Usage:
-tetos path_to_txt_playlist_file
+tetos path_to_local_or_remote_txt_or_html_file
