@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 
 from urllib import request as url_request, parse as url_parse
+import os
 
 
 def fetch_html(src: str):
@@ -25,3 +26,8 @@ def fetch_html(src: str):
     htmls.extend([str(bs)])
 
     return htmls
+
+
+def fetch_plain_file(src: str):
+    resp = url_request.urlopen('file://' + os.path.abspath(src))
+    return resp.read().decode('iso-8859-2').splitlines()

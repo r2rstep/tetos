@@ -21,9 +21,10 @@ class HtmlImporter(InputImporter):
 
 
 class TxtImporter(InputImporter):
-    def __init__(self, file):
+    def __init__(self, file, fetcher):
         self._file_path = file
+        self._fetch = fetcher
 
     def get_entries(self):
-        with open(self._file_path) as f:
-            return list(filter(None, (line.rstrip() for line in f)))
+        f = self._fetch(self._file_path)
+        return list(filter(None, (line.rstrip() for line in f)))
